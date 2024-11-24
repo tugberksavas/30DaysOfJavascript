@@ -20,44 +20,46 @@ const products = [
 */
 
 // Callback fonksiyonu tanımlama
-const elemaniYazdir = (eleman) => console.log(eleman);
+const elemaniYazdir = (eleman) => console.log("eleman:",eleman);
 
 // forEach ile dizideki elemanları yazdırma
 countries.forEach(elemaniYazdir); // Ülkeleri yazdır
+console.log("--------");
 names.forEach(elemaniYazdir); // İsimleri yazdır
+console.log("--------");
 numbers.forEach(elemaniYazdir); // Sayıları yazdır
 
 // map ile diziyi dönüştürme
 const ulkelerBuyukHarf = countries.map(country => country.toUpperCase());
-console.log(ulkelerBuyukHarf); // Tüm ülkeleri büyük harfe çevir
+console.log("bas harfi buyuk yapma",ulkelerBuyukHarf); // Tüm ülkeleri büyük harfe çevir
 
 const ulkelerUzunluk = countries.map(country => country.length);
-console.log(ulkelerUzunluk); // Ülkelerin uzunluklarını al
+console.log("ulkelerin uzunluklari",ulkelerUzunluk); // Ülkelerin uzunluklarını al
 
 const sayilarinKaresi = numbers.map(number => number ** 2);
-console.log(sayilarinKaresi); // Her bir sayının karesini al
+console.log("her sayinin karesini alma ",sayilarinKaresi); // Her bir sayının karesini al
 
 const isimlerBuyukHarf = names.map(name => name.toUpperCase());
-console.log(isimlerBuyukHarf); // İsimleri büyük harfe çevir
+console.log("isimleri buyuk harfe cevirme",isimlerBuyukHarf); // İsimleri büyük harfe çevir
 
 const urunFiyatlari = products.map(product => product.price);
-console.log(urunFiyatlari); // Ürünlerin fiyatlarını al
+console.log("urunlerin fiyatlari",urunFiyatlari); // Ürünlerin fiyatlarını al
 
 // filter ile elemanları filtreleme
 const landIcerenUlkeler = countries.filter(country => country.includes('land'));
-console.log(landIcerenUlkeler); // "land" içeren ülkeler
+console.log("land iceren ulkeler ",landIcerenUlkeler); // "land" içeren ülkeler
 
 const altiHarfliUlkeler = countries.filter(country => country.length === 6);
-console.log(altiHarfliUlkeler); // 6 harfli ülkeler
+console.log("6 harfli ulkeler : " +altiHarfliUlkeler); // 6 harfli ülkeler
 
 const altiVeyaDahaFazlaHarfliUlkeler = countries.filter(country => country.length >= 6);
 console.log(altiVeyaDahaFazlaHarfliUlkeler); // 6 veya daha fazla harfli ülkeler
 
 const EHarfiIleBaslamayanUlkeler = countries.filter(country => !country.startsWith('E'));
-console.log(EHarfiIleBaslamayanUlkeler); // "E" harfi ile başlamayan ülkeler
+console.log("e harfiyle baslayan ulkeler",EHarfiIleBaslamayanUlkeler); // "E" harfi ile başlamayan ülkeler
 
 const gecerliFiyatlar = products.filter(product => typeof product.price === 'number' && product.price > 0);
-console.log(gecerliFiyatlar); // Sadece geçerli fiyatlar
+console.log("gecerli fiyatlar",gecerliFiyatlar); // Sadece geçerli fiyatlar
 
 // Sadece string elemanları döndüren bir fonksiyon
 function stringListeleriAl(dizi) {
