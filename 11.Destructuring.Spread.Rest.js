@@ -98,3 +98,57 @@ const { name: isim, age: yas } = user2;
 console.log(isim, yas); // isim ve yas degiskenleri olusturuldu
 console.log(user2); // user2 objesi degismedi
 console.log("*****************");
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+console.log(multiply(5, 10));
+
+function multiplyArray(numbersArray) {
+  return numbersArray[0] * numbersArray[1];
+}
+const numbersArrayGosterme = [10, 6];
+console.log(multiplyArray(numbersArrayGosterme));
+console.log("*****************");
+
+const user3 = {
+  name: "Tugberk",
+  work: "developer",
+  country: "Turkey",
+  city: "Zonguldak",
+  skills: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+  age: 28,
+};
+
+function kullanciGoster(user3) {
+  return `Merhaba , ben ${user3.name}, ${user3.age} yasindayim, ${user3.country}/${user3.city} dogdum. ${user3.work}isini yapiyorum ${user3.skills} ile. `;
+}
+
+console.log(kullanciGoster(user3));
+console.log("*************");
+
+const sayiCogaltma = [1, 4, 6, 9];
+
+const kopyaSayiCogalma = [...sayiCogaltma];
+
+console.log(sayiCogaltma);
+kopyaSayiCogalma.push(20);
+console.log(sayiCogaltma);
+console.log(kopyaSayiCogalma);
+console.log("**********");
+const userRefarans = {
+  name: "Tugberk",
+  work: "developer",
+  country: "Turkey",
+  city: "Zonguldak",
+  skills: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+  age: 28,
+};
+const userRefaransKopyasi = { ...userRefarans };
+userRefaransKopyasi.name = "Tugberk Savas";
+console.log(userRefarans);
+console.log(userRefaransKopyasi);
+console.log("******************");
+
+const son = [1, 3, 5];
+console.log(0, ...son, 9);
